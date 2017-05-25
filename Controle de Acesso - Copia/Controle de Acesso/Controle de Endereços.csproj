@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D9DAC0E9-1757-4426-8404-AEA71F2F2AD7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Controle_de_Acesso</RootNamespace>
+    <AssemblyName>Controle de Acesso</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Security">
+      <HintPath>F:\Alunos\Wolley\Ambientes Visuais\SI 3A\Aula 08\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>F:\Alunos\Wolley\Ambientes Visuais\SI 3A\Aula 08\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Autentificacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Autentificacao.Designer.cs">
+      <DependentUpon>Autentificacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ControledeMoradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ControledeMoradores.Designer.cs">
+      <DependentUpon>ControledeMoradores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ControleEndereço.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ControleEndereço.Designer.cs">
+      <DependentUpon>ControleEndereço.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ControleFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ControleFuncionarios.Designer.cs">
+      <DependentUpon>ControleFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CrudM2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CrudM2.Designer.cs">
+      <DependentUpon>CrudM2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\Endereco.cs" />
+    <Compile Include="Modelos\Funcionario.cs" />
+    <Compile Include="Modelos\Moradores.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\ConectaDb.cs" />
+    <EmbeddedResource Include="Autentificacao.resx">
+      <DependentUpon>Autentificacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ControledeMoradores.resx">
+      <DependentUpon>ControledeMoradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ControleEndereço.resx">
+      <DependentUpon>ControleEndereço.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ControleFuncionarios.resx">
+      <DependentUpon>ControleFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CrudM2.resx">
+      <DependentUpon>CrudM2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\DataSources\Controle_de_Acesso.Modelos.Endereco.datasource" />
+    <None Include="Properties\DataSources\Controle_de_Acesso.Modelos.Funcionario.datasource" />
+    <None Include="Properties\DataSources\Controle_de_Acesso.Modelos.Moradores.datasource" />
+    <None Include="Properties\DataSources\Controle_de_Acesso.Modelos.Visitantes.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
